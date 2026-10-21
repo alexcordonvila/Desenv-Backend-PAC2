@@ -56,7 +56,6 @@ Això descarrega els fitxers necessaris i configura l'entorn del CMS Drupal.
 
 Per comprobar que tot ha anat bé podem usar ``ddev drush status`` i ``ddev drush status-report`` :
 
-
 ```bash
 Drupal version   : 11.4.10                                    
 Site URI         : https://pac2.ddev.site                     
@@ -94,10 +93,21 @@ ddev start
 ddev launch
 ```
 
+
 > **Nota:** Per arrencar el projecte cada vegada cal seguir aquests passos:
 > 1. Obrir Docker Desktop
 > 2. Anar a la terminal de Linux amb `wsl -d DDEV` i entrar a la carpeta `cd ~/projectes/pac2`
 > 3. Executar `ddev start` i `ddev launch`
+> 4. Com a usuari administrador hem posat: **acordonv@uoc.edu**
+> 5. Coma password hem usat: **Pepa123!**
+
+Les URL que cal que tinguem en compte son les següents:
+  1.  Project Url: https://pac2.ddev.site 
+  2.  http: 127.0.0.1:51698
+  3.  https: 127.0.0.1:51699
+  4.  mailpit (mail de test): https://pac2.ddev.site:8026 o 127.0.0.1:51697
+  5.  db: 127.0.0.1:51700
+  6.  phpmyadmin: https://pac2.ddev.site:8037 
 
 <div style="page-break-after: always;"></div>
 
