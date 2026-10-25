@@ -113,6 +113,17 @@ Les URL que cal que tinguem en compte son les següents:
 
 ## Activitat 2. Creació de continguts
 
+L'objectiu principal d'aquest punt és generar contingut seguint una estructura determinada. Per fe-ho cal tenir present que a Drupal podem definir estructures anomenades Tipus de contingut personalitzat. Per crear aquest contingut hem anat a ``admin/structure/types`` i allà hem fet click a **Add content type** i l'hem anomenat Webtech.
+![Nou Tipus de contingut](tipus_contingut_custom.png)
+
+Un cop creat el nou vocabulari s'ha creat el nou tipus de contingut
+
+Per a fer aquesta activitat s'ha organitzat una estructura inicial creant en primer lloc la taxonomia de Categories creant el vocabulari nou. La taxonomia és el sistema d'organització i classificació per etiquetes que ens permet agrupar continguts que tenen coses en comú. 
+
+![Devel](Devel_generate.png)
+
+ anomenat Webtech afegit 5 tipus de contingut de manera manual (Frontend, Backend, Fullstack, HTML, CSS, PHP, CMS, DevOps, Base de dades), la resta dels 10 tipus ficticis s'han creat usant el mòdul de Drupal anomenat ``Devel``.
+
 
 <div style="page-break-after: always;"></div>
 
