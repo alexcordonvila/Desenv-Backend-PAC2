@@ -114,15 +114,24 @@ Les URL que cal que tinguem en compte son les següents:
 ## Activitat 2. Creació de continguts
 
 L'objectiu principal d'aquest punt és generar contingut seguint una estructura determinada. Per fe-ho cal tenir present que a Drupal podem definir estructures anomenades Tipus de contingut personalitzat. Per crear aquest contingut hem anat a ``admin/structure/types`` i allà hem fet click a **Add content type** i l'hem anomenat Webtech.
+
 ![Nou Tipus de contingut](tipus_contingut_custom.png)
 
-Un cop creat el nou vocabulari s'ha creat el nou tipus de contingut
+L'estructura creada és la seguent:
+```bash
+Title -> Tipus: String (Short text)
+Open Source -> Tipus: Boolean
+Categories -> Tipus: Entity reference > Taxonomy term,  Vocabulari: Categories
+Última versió -> Tipus: Text plain
+Any de publicació darrera versió -> Tipus: Number integer
+Creador -> Tipus: Text plain
+Llenguatge de programació -> Tipus: Text plain
+Logotip -> Tipus: Image
+```
+>Nota: Per crear la taxonomia del camp de Categories hem creat previament la taxonomia de Categories creant el vocabulari nou. La taxonomia és el sistema d'organització i classificació per etiquetes que ens permet agrupar continguts que tenen coses en comú. Hem anat a ``admin/structure/taxonomy``, hem creat una Categoria Webtech i hem afegit aquests termes: Frontend, Backend, Fullstack, HTML, CSS, PHP, CMS, DevOps, Base de dades.  
 
-Per a fer aquesta activitat s'ha organitzat una estructura inicial creant en primer lloc la taxonomia de Categories creant el vocabulari nou. La taxonomia és el sistema d'organització i classificació per etiquetes que ens permet agrupar continguts que tenen coses en comú. 
-
+Un cop tenim definit el tipus de contingut hem creat a ma 5 tecnologies reals i 10 de fictícies. Per crear el contigut fictici s'ha usat el mòdul de Drupal anomenat ``Devel``.
 ![Devel](Devel_generate.png)
-
- anomenat Webtech afegit 5 tipus de contingut de manera manual (Frontend, Backend, Fullstack, HTML, CSS, PHP, CMS, DevOps, Base de dades), la resta dels 10 tipus ficticis s'han creat usant el mòdul de Drupal anomenat ``Devel``.
 
 
 <div style="page-break-after: always;"></div>
