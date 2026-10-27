@@ -146,3 +146,14 @@ Per millorar-ho hem afegit les labels al camp de "Open Source" amb Si/No. En els
 <div style="page-break-after: always;"></div>
 
 ## Activitat 3. Catàleg filtrable 
+
+TODO: Explicar apartat 3
+
+
+![Vista cataleg filtrable](Devel_error.png)
+
+
+Un cop hem configurat cada filtre podem veure el catales a aquesta url: ``https://pac2.ddev.site/cataleg-webtech``
+
+![Vista cataleg final](Devel_error.png)
+
