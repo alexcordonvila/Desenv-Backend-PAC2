@@ -130,10 +130,19 @@ Logotip -> Tipus: Image
 ```
 >Nota: Per crear la taxonomia del camp de Categories hem creat previament la taxonomia de Categories creant el vocabulari nou. La taxonomia és el sistema d'organització i classificació per etiquetes que ens permet agrupar continguts que tenen coses en comú. Hem anat a ``admin/structure/taxonomy``, hem creat una Categoria Webtech i hem afegit aquests termes: Frontend, Backend, Fullstack, HTML, CSS, PHP, CMS, DevOps, Base de dades.  
 
-Un cop tenim definit el tipus de contingut hem creat a ma 5 tecnologies reals i 10 de fictícies. Per crear el contigut fictici s'ha usat el mòdul de Drupal anomenat ``Devel``.
+Un cop tenim definit el tipus de contingut propi hem pogut crear manualment les 5 tecnologies reals. Per crear el contigut fictici s'ha usat el mòdul de Drupal anomenat ``Devel`` que previament s'ha instalat amb Composer. Per crear aquest contingut cal anar a ``/admin/config/development/generate/content`` i seleccionar el tipus de contigut Webtech.
+
 ![Devel](Devel_generate.png)
 
+Si anem a ``admin/content`` podrem veure la llista de Content creat manualment (recuadre vermell) i la resta creat amb Devel:
 
+![Contingut generat](contingut_creat.png)
+
+Usant Devel hem trobat un error per no haver configurat correctament els camps del tipus de contingut. Aquest és un exemple de la primera prova de generació de contingut on podem veure que els camps que s'han omplert no tenen el format esperat:
+
+![Devel error](Devel_error.png)
+
+Per millorar-ho hem afegit les labels al camp de "Open Source" amb Si/No. En els camps de "Última versió", "Creador" i "Llenguatge de programació" ha generat paràgrafs llargs de text Lorem Ipsum així que hem reduit els caracters acceptats en aquests camps.
 <div style="page-break-after: always;"></div>
 
 ## Activitat 3. Catàleg filtrable 
