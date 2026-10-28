@@ -25,6 +25,7 @@
 - [Activitat 1. Instal·lació de Drupal](#activitat-1-installació-de-drupal)
 - [Activitat 2. Creació de continguts](#activitat-2-creació-de-continguts)
 - [Activitat 3. Catàleg filtrable](#activitat-3-catàleg-filtrable)
+- [Activitat 4. Catàleg filtrable](#activitat-4-catàleg-filtrable)
 +
 
 
@@ -147,13 +148,19 @@ Per millorar-ho hem afegit les labels al camp de "Open Source" amb Si/No. En els
 
 ## Activitat 3. Catàleg filtrable 
 
-TODO: Explicar apartat 3
+L'objectiu d'aquest exercici és crear una pàgina amb un catàleg per al tipus de contingut Webtech que permeti filtrar les tecnologíes per Categoria, Open Source i Any de publicació de la darrera versió.
 
+Per fer-ho hem usar el modul de Vista anant a ``Structure > Views`` i hem afegit una nova Vista que hem anomenat Cataleg Webtech. 
+Per a configurar la vista hem afegit els seguents punts:
+  1. **Format**: Unordered list mostrant **Fields**.
+  2. **Camps (Fields)**: Títol, Categories, Open Souce, Any de publicació, creador.
+  3. **Filtres Exposats**: 
+     - **Categoria**: De tipus taxonomia i exposat amb operador "Is one of", amb Reduce duplicates per evitar entrades duplicades i amb valor per defecte "Any" per poder veure tot el cataleg inicialment.
+     - **Open Source**: De tipus booleà amb operador "is equal to" i amb valor per defecte "Any" per poder veure tot el cataleg inicialment.
+     - **Any de publicació**: De tipus enter i exposat amb operador "Is equal to", valor per defecte buit i un placeholder amb un exemple "Ex: 2024".
 
-![Vista cataleg filtrable](Devel_error.png)
+Un cop hem configurat cada filtre podem veure el cataleg a aquesta url: ``https://pac2.ddev.site/cataleg-webtech``
 
+![Vista cataleg filtrable](cataleg_filtrable.png)
 
-Un cop hem configurat cada filtre podem veure el catales a aquesta url: ``https://pac2.ddev.site/cataleg-webtech``
-
-![Vista cataleg final](Devel_error.png)
-
+## Activitat 4. Catàleg filtrable 
