@@ -26,6 +26,8 @@
 - [Activitat 2. Creació de continguts](#activitat-2-creació-de-continguts)
 - [Activitat 3. Catàleg filtrable](#activitat-3-catàleg-filtrable)
 - [Activitat 4. Catàleg filtrable](#activitat-4-catàleg-filtrable)
+  - [1. Disseny i maquetació de la fitxa de contingut](#1-disseny-i-maquetació-de-la-fitxa-de-contingut)
+  - [2. Bloc de "Tres tecnologies web similars" (R4)](#2-bloc-de-tres-tecnologies-web-similars-r4)
 +
 
 
@@ -164,3 +166,23 @@ Un cop hem configurat cada filtre podem veure el cataleg a aquesta url: ``https:
 ![Vista cataleg filtrable](cataleg_filtrable.png)
 
 ## Activitat 4. Catàleg filtrable 
+
+### 1. Disseny i maquetació de la fitxa de contingut
+- **Estructura en columnes:** S'ha activat el mòdul **Layout Builder** al tipus de contingut *Webtech* per organitzar la informació en una disposició de dues columnes.
+- **Optimització visual:**
+  - Columna esquerra: Ajust de la mida del logotip (formatador *Medium*) i visualització de les categories.
+  - Columna dreta: Disposició dels camps en línia (*Inline*) per a metadades com *Open Source*, *Última versió*, *Any de publicació*, *Creador* i *Llenguatge de programació*.
+- **Neteja d'interfície:** S'han amagat les etiquetes redundants (com el nom del logotip) i s'ha desactivat la informació d'autor i data de publicació des de la configuració del tipus de contingut.
+
+### 2. Bloc de "Tres tecnologies web similars" (R4)
+Per afegir la secció de les 3 tecnologies similars hem creat una vista de nom ``Tecnologies similars`` amb el check de "Create a block" seleccionat. Per als View Settings hem seleccionat ``Show Content of type Webtech sorted by Title``. Per a configurar el block hem introduit un titol ``Tecnologies similars`` i ``Display format Unformated list output as fields``. 
+
+- **Filtres contextuals (Contextual Filters):**
+  1. **Exclusió del node actual:** S'ha configurat un filtre per `Content: ID` que obté l'ID de la URL i l'exclou (`Exclude`), evitant que la tecnologia que s'està consultant es recomani a si mateixa.
+  2. **Coincidència per Categoria:** S'ha afegit el filtre `Has taxonomy term ID` configurat per carregar els termes des de la pàgina del node (`Load default filter from node page`) i filtrar continguts que comparteixin qualsevol categoria (`Filter to items that share any term`).
+- **Integració:** S'ha afegit el bloc directament a la part inferior de la plantilla de maquetació de *Layout Builder*.
+
+Podem veure el resultat final en aquesta captura:
+
+![Vista cataleg filtrable](activitat4_final.png)
+
