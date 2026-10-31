@@ -28,6 +28,10 @@
 - [Activitat 4. Catàleg filtrable](#activitat-4-catàleg-filtrable)
   - [1. Disseny i maquetació de la fitxa de contingut](#1-disseny-i-maquetació-de-la-fitxa-de-contingut)
   - [2. Bloc de "Tres tecnologies web similars" (R4)](#2-bloc-de-tres-tecnologies-web-similars-r4)
+- [Activitat 5. Catàleg filtrable](#activitat-5-catàleg-filtrable)
+  - [1. Crear el rol de Col·laborador](#1-crear-el-rol-de-collaborador)
+  - [2. Continguts "Pendents de moderació"](#2-continguts-pendents-de-moderació)
+  - [3. Creació d'usuari de prova](#3-creació-dusuari-de-prova)
 +
 
 
@@ -184,5 +188,31 @@ Per afegir la secció de les 3 tecnologies similars hem creat una vista de nom `
 
 Podem veure el resultat final en aquesta captura:
 
+TODO: Fer la foto que toca:
 ![Vista cataleg filtrable](activitat4_final.png)
 
+## Activitat 5. Catàleg filtrable 
+
+### 1. Crear el rol de Col·laborador
+Per crear el rol de **Col·laborador** hem anat a ``/admin/people/roles``. I s'ha afegit el nou rol amb "Add role".  
+
+A aquest rol se li han asignat els permisos pertinents per a webtech des de ``/admin/people/permissions > Webtech``: Crear contingut nou,Editar contingut propi, eliminar contingut propi. També ens ha fet falta afegir la capacitat de ``Basic workflow: Use Create new draft transition``. Per a que pugui pujar imatges com la de Logotip cal que també li afegitm els permisos de ``Image: Create new media`` 
+
+![Permisos col·laborador webtech](permisos_col·laborador.png)
+
+### 2. Continguts "Pendents de moderació"
+Aquest rol de col·laborador només ha de poder crear contingut en estat pendent fins que el rol admin el marqui com a publicat.
+Per fer-ho s'ha configurat des de ``/admin/structure/types/manage/webtech > Edit`` i a Publishing options desmarquem Published.
+
+### 3. Creació d'usuari de prova
+Per crear l'usuari de prova hem anat a ``/admin/people/create``. 
+
+![Nou usuari de prova](usuari_prova.png)
+
+Per finalitzar aquest punt s'han creat les dues tecnologies web associades a l'usuari creat. Per comprovar l'experiència d'usuari editor ans'ha iniciat sessió amb aquest usuari. L'usuari editor veu l'entorn de creació com es mostra a la següent captura:
+
+![Nou usuari de prova](usuari_editor.png)
+
+Si ara entrem com a administrador podem veure que l'usuari editor ha creat dos continguts en estat Unpublished:
+
+![Permisos col·laborador webtech](usuari_prova_contingut.png)
