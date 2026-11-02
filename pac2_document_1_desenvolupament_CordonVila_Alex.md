@@ -26,15 +26,14 @@
 - [Activitat 2. Creació de continguts](#activitat-2-creació-de-continguts)
 - [Activitat 3. Catàleg filtrable](#activitat-3-catàleg-filtrable)
 - [Activitat 4. Catàleg filtrable](#activitat-4-catàleg-filtrable)
-  - [1. Disseny i maquetació de la fitxa de contingut](#1-disseny-i-maquetació-de-la-fitxa-de-contingut)
-  - [2. Bloc de "Tres tecnologies web similars" (R4)](#2-bloc-de-tres-tecnologies-web-similars-r4)
+  - [4.1. Disseny i maquetació de la fitxa de contingut](#41-disseny-i-maquetació-de-la-fitxa-de-contingut)
+  - [4.2. Bloc de "Tres tecnologies web similars" (R4)](#42-bloc-de-tres-tecnologies-web-similars-r4)
 - [Activitat 5. Catàleg filtrable](#activitat-5-catàleg-filtrable)
-  - [1. Crear el rol de Col·laborador](#1-crear-el-rol-de-collaborador)
-  - [2. Continguts "Pendents de moderació"](#2-continguts-pendents-de-moderació)
-  - [3. Creació d'usuari de prova](#3-creació-dusuari-de-prova)
+  - [5.1. Crear el rol de Col·laborador](#51-crear-el-rol-de-collaborador)
+  - [5.2. Continguts "Pendents de moderació"](#52-continguts-pendents-de-moderació)
+  - [5.3. Creació d'usuari de prova](#53-creació-dusuari-de-prova)
+- [Activitat 6. Catàleg filtrable](#activitat-6-catàleg-filtrable)
 +
-
-
 
 <div style="page-break-after: always;"></div>
 
@@ -171,14 +170,14 @@ Un cop hem configurat cada filtre podem veure el cataleg a aquesta url: ``https:
 
 ## Activitat 4. Catàleg filtrable 
 
-### 1. Disseny i maquetació de la fitxa de contingut
+### 4.1. Disseny i maquetació de la fitxa de contingut
 - **Estructura en columnes:** S'ha activat el mòdul **Layout Builder** al tipus de contingut *Webtech* per organitzar la informació en una disposició de dues columnes.
 - **Optimització visual:**
   - Columna esquerra: Ajust de la mida del logotip (formatador *Medium*) i visualització de les categories.
   - Columna dreta: Disposició dels camps en línia (*Inline*) per a metadades com *Open Source*, *Última versió*, *Any de publicació*, *Creador* i *Llenguatge de programació*.
 - **Neteja d'interfície:** S'han amagat les etiquetes redundants (com el nom del logotip) i s'ha desactivat la informació d'autor i data de publicació des de la configuració del tipus de contingut.
 
-### 2. Bloc de "Tres tecnologies web similars" (R4)
+### 4.2. Bloc de "Tres tecnologies web similars" (R4)
 Per afegir la secció de les 3 tecnologies similars hem creat una vista de nom ``Tecnologies similars`` amb el check de "Create a block" seleccionat. Per als View Settings hem seleccionat ``Show Content of type Webtech sorted by Title``. Per a configurar el block hem introduit un titol ``Tecnologies similars`` i ``Display format Unformated list output as fields``. 
 
 - **Filtres contextuals (Contextual Filters):**
@@ -193,18 +192,18 @@ TODO: Fer la foto que toca:
 
 ## Activitat 5. Catàleg filtrable 
 
-### 1. Crear el rol de Col·laborador
+### 5.1. Crear el rol de Col·laborador
 Per crear el rol de **Col·laborador** hem anat a ``/admin/people/roles``. I s'ha afegit el nou rol amb "Add role".  
 
 A aquest rol se li han asignat els permisos pertinents per a webtech des de ``/admin/people/permissions > Webtech``: Crear contingut nou,Editar contingut propi, eliminar contingut propi. També ens ha fet falta afegir la capacitat de ``Basic workflow: Use Create new draft transition``. Per a que pugui pujar imatges com la de Logotip cal que també li afegitm els permisos de ``Image: Create new media`` 
 
 ![Permisos col·laborador webtech](permisos_col·laborador.png)
 
-### 2. Continguts "Pendents de moderació"
+### 5.2. Continguts "Pendents de moderació"
 Aquest rol de col·laborador només ha de poder crear contingut en estat pendent fins que el rol admin el marqui com a publicat.
 Per fer-ho s'ha configurat des de ``/admin/structure/types/manage/webtech > Edit`` i a Publishing options desmarquem Published.
 
-### 3. Creació d'usuari de prova
+### 5.3. Creació d'usuari de prova
 Per crear l'usuari de prova hem anat a ``/admin/people/create``. 
 
 ![Nou usuari de prova](usuari_prova.png)
@@ -213,6 +212,24 @@ Per finalitzar aquest punt s'han creat les dues tecnologies web associades a l'u
 
 ![Nou usuari de prova](usuari_editor.png)
 
-Si ara entrem com a administrador podem veure que l'usuari editor ha creat dos continguts en estat Unpublished:
+Si ara entrem com a administrador podem veure que l'usuari editor ha creat dos continguts en estat Unpublished i fa falta que l'admin els publiqui:
 
 ![Permisos col·laborador webtech](usuari_prova_contingut.png)
+
+## Activitat 6. Catàleg filtrable 
+
+Per començar aquesta activitat hem despublicat les pagines que venen per defecte amb el tema instal·lat a Drupal.
+Llavors hem creat una pagina nova anomenada Inici i hem afegit un títol i una llista d'enllaços.
+
+
+
+Per a la pagina dels Col·laboradors hem creat una vista nova anant a ``/admin/structure/menu/manage/main`` i afegint un nou enllaç anomenat /col-laboradors com podem veure a la següent captura: 
+![Crear Vista Col·laboradors](vista_de_colaboradors.png)
+
+Perquè a la taula només surtin els col·laboradors i no l'usuari administrador hem seleccionat **Filter Criteria > Roles > Is one of > Col·laborador** com podem veure a la següent captura:
+![Configurar el filtre per Rols](vista_colaboradors_Roles.png)
+
+Per evitar que aquest vista demani login als usuaris que entren a la web cal que configurem a ``/admin/structure/views/view/col_laboradors > Page settings`` i posar que l'accés sigui ``Unrestricted``.
+
+Ara al fer click a l'enllaç de la pagina d'inici ja ens carrega correctament el llistat d'usuaris col·laboradors:
+![Vista col·laboradors final](vista_colaboradors_final.png)
