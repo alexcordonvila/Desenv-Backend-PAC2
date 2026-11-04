@@ -33,6 +33,10 @@
   - [5.2. Continguts "Pendents de moderació"](#52-continguts-pendents-de-moderació)
   - [5.3. Creació d'usuari de prova](#53-creació-dusuari-de-prova)
 - [Activitat 6. Catàleg filtrable](#activitat-6-catàleg-filtrable)
+- [Activitat 7. Continguts destacats](#activitat-7-continguts-destacats)
+  - [7.1 Creació de la vista](#71-creació-de-la-vista)
+  - [7.2 Configurar els Camps i ordre aleatori](#72-configurar-els-camps-i-ordre-aleatori)
+  - [7.3 Col·locar el Bloc a la Portada i Afegir el Footer](#73-collocar-el-bloc-a-la-portada-i-afegir-el-footer)
 +
 
 <div style="page-break-after: always;"></div>
@@ -219,9 +223,7 @@ Si ara entrem com a administrador podem veure que l'usuari editor ha creat dos c
 ## Activitat 6. Catàleg filtrable 
 
 Per començar aquesta activitat hem despublicat les pagines que venen per defecte amb el tema instal·lat a Drupal.
-Llavors hem creat una pagina nova anomenada Inici i hem afegit un títol i una llista d'enllaços.
-
-
+Llavors hem creat una pagina nova anomenada Inici com a pàgina pricipal i hem afegit un títol i una llista d'enllaços amb cada un dels requeriments de R8.
 
 Per a la pagina dels Col·laboradors hem creat una vista nova anant a ``/admin/structure/menu/manage/main`` i afegint un nou enllaç anomenat /col-laboradors com podem veure a la següent captura: 
 ![Crear Vista Col·laboradors](vista_de_colaboradors.png)
@@ -233,3 +235,21 @@ Per evitar que aquest vista demani login als usuaris que entren a la web cal que
 
 Ara al fer click a l'enllaç de la pagina d'inici ja ens carrega correctament el llistat d'usuaris col·laboradors:
 ![Vista col·laboradors final](vista_colaboradors_final.png)
+
+Per a poder veure l'Api JSON hem hagut d'activar el JSONAPI. Per fer-ho ho podem fer amb drush amb ``ddev drush en jsonapi -y`` o bé des de ``extend > /admin/modules > JSON:API`` :
+
+![Vista col·laboradors final](vista_API.png)
+
+
+## Activitat 7. Continguts destacats
+
+### 7.1 Creació de la vista
+En aquest punt, s'ha creat una nova vista anomenada **Tecnologies destacades** des de ``/admin/structure/views/add``. Aquesta vista és de contingut ``Webtech``, no genera una pagina nova i crea un bloc nou homònim amb format ``Unformatted list`` de camps amb 5 items per mostrar. 
+### 7.2 Configurar els Camps i ordre aleatori
+A la vista, dins la secció de Fields s'ha afegit el camp Open Source amb (Si/No) i el camp Logotip.
+Per fer que el criteri d'ordenació sigui aleatori, a la secció de Sort Criteria s'ha afegit ``Random``. 
+
+![Vista configurada](activitat7_final.png)
+
+### 7.3 Col·locar el Bloc a la Portada i Afegir el Footer
+
