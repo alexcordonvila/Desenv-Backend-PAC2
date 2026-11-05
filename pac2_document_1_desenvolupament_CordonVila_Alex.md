@@ -37,6 +37,8 @@
   - [7.1 Creació de la vista](#71-creació-de-la-vista)
   - [7.2 Configurar els Camps i ordre aleatori](#72-configurar-els-camps-i-ordre-aleatori)
   - [7.3 Col·locar el Bloc a la Portada i Afegir el Footer](#73-collocar-el-bloc-a-la-portada-i-afegir-el-footer)
+- [Activitat 8. API rest](#activitat-8-api-rest)
+- [Activitat 9. Publicació](#activitat-9-publicació)
 +
 
 <div style="page-break-after: always;"></div>
@@ -252,4 +254,28 @@ Per fer que el criteri d'ordenació sigui aleatori, a la secció de Sort Criteri
 ![Vista configurada](activitat7_final.png)
 
 ### 7.3 Col·locar el Bloc a la Portada i Afegir el Footer
+Per col·locar el bloc a la portada hem afegit una nova regió de Tecnologies destacades a ``/admin/structure/block > Content`` col·locant a la secció de `` visibilitat > Pàgines``  el tag de ``<front>``. 
+Un cop afegit s'ha comprobat que el que es veu a la vista principal sigui el que s'espera al requisit.
 
+![Vista final](activitat7_final_home.png)
+
+Per afegir el footer s'ha vist que Drupal ja disposa del bloc Footer, l'hem editat per afegir et text de Nom i cognom i no s'ha agefit el tag de ``<front>`` per a que aparegui a totes les pàgines i subpàgines.
+
+## Activitat 8. API rest
+En primer lloc s'ha instal·lat el module Rest via Drush.
+
+Llavors des de ``Estructura > Vistes`` s'ha afegit una nova vista anomenada **API Webtechs** que mostra contingut de tipus Webtech i ara no és ni una pàgina en blanc ni un Bloc sinó una exportació REST. A la vista s'ha indicat la ruta de l'exportació REST: ``/api/webtechs``.
+
+A la configuració d'aquesta vista nova hem afegit els següents punts per a complir els requeriments proposats:
+  1. Paginador: Tipus FULL i amb 10 items de paginació.
+  2. Format: Serializer amb la opció de JSON seleccionada.
+  3. Show: S'ha escollit mostrar l'entitat completa.
+Podem veure la confiuració en aquesta captura següent:
+
+![Vista configurada API REST](activitat8_view.png)
+
+Podem veure el resultat obtingut si anem a la url indicada:
+![Vista resultat API REST ](activitat8_final.png)
+
+
+## Activitat 9. Publicació
